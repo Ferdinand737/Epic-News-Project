@@ -1,0 +1,123 @@
+
+body {
+    background: #313131;
+    color:white;
+}
+header {
+    width: 100%;
+    position: fixed;
+    z-index: 1000 !important;
+}
+.dropdown-toggle{
+    color:white;
+}
+.navbar {
+    background:#2993f7;
+}
+
+.nav-link, .navbar-brand {
+    cursor: pointer;
+    color: white;
+}
+.nav-link {
+    color: white;
+    text-align:end;
+    margin-right: 1em !important;
+}
+.nav-item {
+    text-align: end;
+}
+.nav-link:hover, .navbar-brand:hover, .side-link:hover{
+    color: #000;
+}
+.side-link{
+    color:white;
+}
+
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
+.divContentPosts{
+    margin-top:66px;
+    margin-left:17vh;
+}
+#divLeftColumn {
+    position: fixed;
+    background-color: #2993f7;
+    color: black;
+    height: 100%;
+    margin-top: 56px;
+    margin-left: 0px;
+    width: 15vh;
+    z-index: -1;
+}
+.profile-pic{
+    border-radius: 50%;
+}
+.content {
+    margin-top: 66px;
+}
+.pinLeft {
+    width:20em;
+}
+.fillRight{
+    margin-left:1em;
+    width:100%;
+}
+.scrollTable {
+    max-height:15em;
+    min-width:100%;
+    overflow-y:scroll;
+}
+.prevText{
+    color:gold
+}
+#SearchResultPostList{
+    z-index:-1;
+}
+
+.table-bordered, .secUserProfile{
+    border-radius: 30px;
+    background-color: #1c171d;
+}
+
+.up {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    background: none;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+  
+.down {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    background: none;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.post-votes-td, .comment-votes-td {
+    width: 15px;
+    position:relative;
+}
+
+.post-user-td{
+    width: 15%;
+}
+
+.active-caret {
+    border-color: #2993f7;
+}
+
+.about-me-text {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    max-width: 100%;
+}

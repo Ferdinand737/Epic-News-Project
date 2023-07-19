@@ -1,0 +1,228 @@
+
+INSERT INTO `user` (`username`, `email`, `password`, `is_admin`,`about_me`)
+VALUES ('Jim', 'jane_doe@example.com', md5('Password123'), false, 'Avid hiker and photography enthusiast.');
+
+INSERT INTO `user` (`username`, `email`,`password`, `is_admin`, `about_me`)
+VALUES ('Jane','myEmailAddress@gmail.ca', md5('Password123'), true,'Web developer and cat lover.');
+
+INSERT INTO `user` (`username`, `email`, `password`, `is_admin`,`about_me`)
+VALUES ('Bob', 'email@email.com', md5('Password123'), false,'Budding chef and collector of vintage comic books.');
+
+INSERT INTO `user` (`username`, `email`, `password`, `is_admin`,`about_me`)
+VALUES ('Andrew', 'NULL@null.ca', md5('Password123'), true,'Sports enthusiast and part-time freelance writer.');
+
+INSERT INTO `user` (`username`, `email`, `password`, `is_admin`,`about_me`)
+VALUES ('Joe', 'averylongemailaddress@longdomainname.com', md5('Password123'), false,'Travel junkie and amateur painter.');
+
+INSERT INTO `user` (`username`, `email`, `password`, `is_admin`,`about_me`)
+VALUES ('Karen', 'a@example.com', md5('Password123'), true,'Yoga instructor and organic gardening advocate.');
+
+INSERT INTO `user` (`username`, `email`, `password`, `is_admin`,`about_me`)
+VALUES ('Ansyn', 'e@example.com', md5('pass'), true, 'Caffenated.');
+
+INSERT INTO `sub`( `title`, `visible`, `created_by`)
+VALUES ('Travel',1,1);
+
+INSERT INTO `sub`( `title`, `visible`, `created_by`)
+VALUES ('Health',1,1);
+
+INSERT INTO `sub`( `title`, `visible`, `created_by`)
+VALUES ('Tech',1,1);
+
+INSERT INTO `post` (`user_id`,`parent_sub_id`, `title`, `content`)
+VALUES (1, 3,'My first post', 'This is my first post on this website. I hope you find it interesting!');
+
+INSERT INTO `post` (`user_id`,`parent_sub_id`,`title`,`content`)
+VALUES (1, 1,"The Best Hiking Trails in the US",
+"Hello fellow hikers! I recently went on an amazing trip and wanted to share my experiences and recommendations for the best hiking trails in the United States. My top 3 favorites are: 1) The Appalachian Trail, 2) Yosemite National Park, and 3) Zion National Park. Let me know your thoughts and any other trails worth exploring!"
+);
+
+INSERT INTO `post` (`user_id`,`parent_sub_id`,`title`,`content`)
+VALUES (2,3,"Introduction to Web Development",
+"Welcome to this introductory guide to web development! In this post, we will cover the basics of HTML, CSS, and JavaScript, which are the core technologies behind web development. By the end of this guide, you should have a solid foundation to start building your own websites and web applications. Let's get started!"
+);
+
+INSERT INTO `post` (`user_id`,`parent_sub_id`,`title`,`content`)
+VALUES (3,2,"The Art of Cooking: Essential Tips for Beginners",
+"As a beginner cook, it can be overwhelming to step into the kitchen and create your first meal. But fear not, because in this post, I will share essential tips and tricks that will help you master the art of cooking in no time!"
+);
+
+INSERT INTO `post` (`user_id`,`parent_sub_id`,`title`,`content`)
+VALUES (4,2,"The Importance of Staying Active",
+"With our busy lives, it can be difficult to find the time and motivation to stay active. In this post, we will discuss the importance of physical activity, its benefits for our overall health, and tips on how to incorporate exercise into our daily routines."
+);
+
+INSERT INTO `post` (`user_id`,`parent_sub_id`,`title`,`content`)
+VALUES (4,1,"Travel Tips for the Budget-Conscious",
+"Traveling can be an expensive hobby, but it doesn't have to break the bank. In this post, I will share my favorite tips");
+
+INSERT INTO `post` (`user_id`,`parent_sub_id`,`title`,`content`)
+VALUES (6,2,"The Benefits of Practicing Yoga",
+"Yoga has gained immense popularity in recent years, and for good reason. In this post, we will explore the physical, mental, and spiritual benefits of practicing yoga, as well as tips for beginners to get started.");
+
+INSERT INTO `post` (`user_id`,`parent_sub_id`,`title`,`content`)
+VALUES (6,2,"Organic Gardening Tips for Beginners",
+"Are you interested in starting your own organic garden? In this post, I will share useful tips and techniques for beginners looking to grow their own organic produce at home. Happy gardening!");
+
+INSERT INTO `post` (`user_id`,`parent_sub_id`,`title`,`content`)
+VALUES (5,2,"The Impact of Climate Change on Wildlife",
+"Climate change is an urgent issue that affects not only humans but also our planet's wildlife. In this post, we will discuss the impact of climate change on various species and what we can do to help protect their habitats.");
+
+
+
+INSERT INTO `comment` (`user_id`,`post_id`,`parent_id`,`content`)
+VALUES (6,1,NULL,"Great first post, Jim! Looking forward to reading more of your content.");
+
+INSERT INTO `comment` (`user_id`,`post_id`,`parent_id`,`content`)
+VALUES (2,1,NULL,"Welcome to the community, Jim! Excited to see what you have to share.");
+
+
+
+
+INSERT INTO `comment` (`user_id`,`post_id`,`parent_id`,`content`)
+VALUES (3,2,NULL,"I've always wanted to hike the Appalachian Trail. Thanks for the inspiration!");
+
+    INSERT INTO `comment` (`user_id`,`post_id`,`parent_id`,`content`)
+    VALUES (1,2,3,"The Appalachian Trail is a fantastic experience. I highly recommend it!");
+
+INSERT INTO `comment` (`user_id`,`post_id`,`parent_id`,`content`)
+VALUES (5,2,NULL,"Yosemite is my favorite national park! The views are just breathtaking.");
+
+INSERT INTO `comment` (`user_id`,`post_id`,`parent_id`,`content`)
+VALUES (4,2,NULL,"Jim, your post inspired me to plan a hiking trip this summer. Thanks!");
+
+
+
+
+INSERT INTO `comment` (`user_id`,`post_id`,`parent_id`,`content`)
+VALUES (5,3,NULL,"This guide is so helpful! Thank you for sharing.");
+
+    INSERT INTO `comment` (`user_id`,`post_id`,`parent_id`,`content`)
+    VALUES (2,3,7,"Glad you found it helpful! Web development can be a lot of fun.");
+
+INSERT INTO `comment` (`user_id`,`post_id`,`parent_id`,`content`)
+VALUES (6,3,NULL,"I'm new to web development and this is just what I needed. Thanks!");
+
+INSERT INTO `comment` (`user_id`,`post_id`,`parent_id`,`content`)
+VALUES (4,3,NULL,"Do you have any recommendations for more advanced resources?");
+
+
+
+
+
+INSERT INTO `comment` (`user_id`,`post_id`,`parent_id`,`content`)
+VALUES (2,4,NULL,"These tips are great! I'm excited to try them out in my own kitchen.");
+
+    INSERT INTO `comment` (`user_id`,`post_id`,`parent_id`,`content`)
+    VALUES (5,4,11,"I agree, these tips have been really helpful for me too!");
+
+    INSERT INTO `comment` (`user_id`,`post_id`,`parent_id`,`content`)
+    VALUES (3,4,11,"I'm glad you found the guide helpful. Let me know if you have any questions!");
+
+INSERT INTO `comment` (`user_id`,`post_id`,`parent_id`,`content`)
+VALUES (1,4,NULL,"What's your favorite beginner-friendly recipe?");
+
+    INSERT INTO `comment` (`user_id`,`post_id`,`parent_id`,`content`)
+    VALUES (3,4,14,"One of my favorite beginner-friendly recipes is spaghetti aglio e olio. Simple and delicious!");
+
+
+
+
+INSERT INTO `comment` (`user_id`,`post_id`,`parent_id`,`content`)
+VALUES (6,5,NULL,"I've been trying to get more active lately, and this post is just what I needed!");
+
+    INSERT INTO `comment` (`user_id`,`post_id`,`parent_id`,`content`)
+    VALUES (4,5,16,"Great to hear you're getting more active. Keep it up!");
+
+INSERT INTO `comment` (`user_id`,`post_id`,`parent_id`,`content`)
+VALUES (2,5,NULL,"Exercise has made such a difference in my life. Thanks for sharing!");
+
+
+
+
+INSERT INTO `comment` (`user_id`,`post_id`,`parent_id`,`content`)
+VALUES (2,7,NULL,"I started practicing yoga a few months ago, and I've noticed a huge improvement in my flexibility.");
+
+    INSERT INTO `comment` (`user_id`,`post_id`,`parent_id`,`content`)
+    VALUES (6,7,19,"That's awesome! Keep up the good work.");
+
+        INSERT INTO `comment` (`user_id`,`post_id`,`parent_id`,`content`)
+        VALUES (2,7,20,"Thank you! I've been really enjoying my yoga journey.");
+
+
+
+INSERT INTO `comment` (`user_id`,`post_id`,`parent_id`,`content`)
+VALUES (4,8,NULL,"I've been wanting to start an organic garden for a while now. Thanks for the tips!");
+
+INSERT INTO `comment` (`user_id`,`post_id`,`parent_id`,`content`)
+VALUES (6,8,22,"Gardening is so therapeutic. I love growing my own food!");
+
+INSERT INTO `comment` (`user_id`,`post_id`,`parent_id`,`content`)
+VALUES (1,8,NULL,"What are some easy plants to start with for a beginner gardener?");
+
+
+
+
+INSERT INTO `comment` (`user_id`,`post_id`,`parent_id`,`content`)
+VALUES (4,9,NULL,"It's so important that we protect wildlife and their habitats. Thanks for raising awareness!");
+
+INSERT INTO `comment` (`user_id`,`post_id`,`parent_id`,`content`)
+VALUES (2,9,25,"We must act now to protect our planet for future generations.");
+
+INSERT INTO `comment` (`user_id`,`post_id`,`parent_id`,`content`)
+VALUES (4,9,25,"I agree! We all need to do our part to protect our planet.");
+
+INSERT INTO `comment` (`user_id`,`post_id`,`parent_id`,`content`)
+VALUES (3,9,NULL,"Thank you for writing about this important issue. We need to do more to protect our environment.");
+
+INSERT INTO `comment` (`user_id`,`post_id`,`parent_id`,`content`)
+VALUES (6,9,28,"Absolutely! Every little bit helps.");
+
+UPDATE post SET creation_date = '2023-03-15 12:34:56' WHERE post_id = 1;
+UPDATE post SET creation_date = '2023-02-20 14:30:00' WHERE post_id = 2;
+UPDATE post SET creation_date = '2023-01-05 10:45:30' WHERE post_id = 3;
+UPDATE post SET creation_date = '2023-03-15 18:22:15' WHERE post_id = 4;
+UPDATE post SET creation_date = '2023-12-25 23:15:45' WHERE post_id = 5;
+UPDATE post SET creation_date = '2023-01-05 07:30:50' WHERE post_id = 6;
+UPDATE post SET creation_date = '2023-11-30 17:00:00' WHERE post_id = 7;
+UPDATE post SET creation_date = '2023-02-20 21:45:15' WHERE post_id = 8;
+UPDATE post SET creation_date = '2023-12-25 09:00:00' WHERE post_id = 9;
+
+UPDATE user SET creation_date = '2021-03-10 12:34:56' WHERE user_id = 1;
+UPDATE user SET creation_date = '2021-02-25 14:30:00' WHERE user_id = 2;
+UPDATE user SET creation_date = '2020-12-05 10:45:30' WHERE user_id = 3;
+UPDATE user SET creation_date = '2021-03-10 18:22:15' WHERE user_id = 4;
+UPDATE user SET creation_date = '2020-11-25 23:15:45' WHERE user_id = 5;
+UPDATE user SET creation_date = '2020-12-05 07:30:50' WHERE user_id = 6;
+UPDATE user SET creation_date = '2021-10-30 17:00:00' WHERE user_id = 7;
+
+UPDATE comment SET creation_date = '2022-01-05 07:30:50' WHERE comment_id = 1;
+UPDATE comment SET creation_date = '2022-01-05 10:45:30' WHERE comment_id = 2;
+UPDATE comment SET creation_date = '2022-01-12 21:50:20' WHERE comment_id = 3;
+UPDATE comment SET creation_date = '2022-01-20 19:40:10' WHERE comment_id = 4;
+UPDATE comment SET creation_date = '2022-01-25 20:30:40' WHERE comment_id = 5;
+UPDATE comment SET creation_date = '2022-02-05 14:15:20' WHERE comment_id = 6;
+UPDATE comment SET creation_date = '2022-02-10 13:35:45' WHERE comment_id = 7;
+UPDATE comment SET creation_date = '2022-02-15 08:05:00' WHERE comment_id = 8;
+UPDATE comment SET creation_date = '2022-02-20 14:30:00' WHERE comment_id = 9;
+UPDATE comment SET creation_date = '2022-02-20 21:45:15' WHERE comment_id = 10;
+UPDATE comment SET creation_date = '2022-02-28 22:20:25' WHERE comment_id = 11;
+UPDATE comment SET creation_date = '2022-03-03 18:55:10' WHERE comment_id = 12;
+UPDATE comment SET creation_date = '2022-03-08 16:15:30' WHERE comment_id = 13;
+UPDATE comment SET creation_date = '2022-03-15 12:34:56' WHERE comment_id = 14;
+UPDATE comment SET creation_date = '2022-03-15 18:22:15' WHERE comment_id = 15;
+UPDATE comment SET creation_date = '2022-06-15 20:05:30' WHERE comment_id = 16;
+UPDATE comment SET creation_date = '2022-07-25 15:25:35' WHERE comment_id = 17;
+UPDATE comment SET creation_date = '2022-08-10 11:20:30' WHERE comment_id = 18;
+UPDATE comment SET creation_date = '2022-09-17 10:10:10' WHERE comment_id = 19;
+UPDATE comment SET creation_date = '2022-10-18 10:40:15' WHERE comment_id = 20;
+UPDATE comment SET creation_date = '2022-10-30 12:35:50' WHERE comment_id = 21;
+UPDATE comment SET creation_date = '2022-11-05 14:25:40' WHERE comment_id = 22;
+UPDATE comment SET creation_date = '2022-11-14 16:45:20' WHERE comment_id = 23;
+UPDATE comment SET creation_date = '2022-11-29 09:30:50' WHERE comment_id = 24;
+UPDATE comment SET creation_date = '2022-11-30 17:00:00' WHERE comment_id = 25;
+UPDATE comment SET creation_date = '2022-12-02 17:50:00' WHERE comment_id = 26;
+UPDATE comment SET creation_date = '2022-12-20 18:10:55' WHERE comment_id = 27;
+UPDATE comment SET creation_date = '2022-12-25 09:00:00' WHERE comment_id = 28;
+UPDATE comment SET creation_date = '2022-12-25 23:15:45' WHERE comment_id = 29;
+

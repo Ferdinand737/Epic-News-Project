@@ -1,0 +1,70 @@
+DROP TABLE IF EXISTS `user`;
+
+CREATE TABLE `user`(
+    user_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    username varchar(20) NOT NULL,
+    email varchar(100) NOT NULL,
+    password varchar(40) NOT NULL,
+    is_admin boolean  DEFAULT 0 NOT NULL,
+    creation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    profile_picture LONGBLOB DEFAULT NULL,
+    is_active boolean DEFAULT 1 NOT NULL,
+    about_me text DEFAULT NULL
+);
+
+DROP TABLE IF EXISTS `post`;
+
+CREATE TABLE `post`(
+    post_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    user_id int NOT NULL REFERENCES user(user_id),
+    parent_sub_id int NOT NULL REFERENCES sub(sub_id),
+    title varchar(256) NOT NULL,
+    content text,
+    visible boolean DEFAULT 1 NOT NULL,
+    creation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+DROP TABLE IF EXISTS `sub`;
+
+CREATE TABLE `sub` (
+    sub_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    title varchar(256) NOT NULL,
+    visible boolean DEFAULT 1 NOT NULL,
+    created_by int NOT NULL REFERENCES user(user_id),
+    creation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+DROP TABLE IF EXISTS `post_votes`;
+
+CREATE TABLE `post_votes`(
+    post_id int,
+    user_id int,
+    vote int
+);
+
+DROP TABLE IF EXISTS `comment_votes`;
+
+CREATE TABLE `comment_votes`(
+    comment_id int,
+    user_id int,
+    vote int    
+);
+
+DROP TABLE IF EXISTS `comment`;
+
+CREATE TABLE`comment`(
+    comment_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    user_id int NOT NULL REFERENCES user(user_id),
+    post_id int NOT NULL REFERENCES post(post_id),
+    parent_id int,
+    content text,
+    creation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    visible boolean DEFAULT 1 NOT NULL
+);
+
+DROP TABLE IF EXISTS `post_img`;
+
+CREATE TABLE `post_img`(
+    post_id int NOT NULL REFERENCES post(post_id),
+    img LONGBLOB NOT NULL
+);
